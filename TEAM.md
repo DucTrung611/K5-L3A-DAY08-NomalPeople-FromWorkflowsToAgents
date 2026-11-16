@@ -11,9 +11,9 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Thân Đức Trung | 2A202603449 | | DucTrung611 | Nhóm trưởng · Shape A `workflow` + integration (merge PR, benchmark, crash suite, ADR) |
+|   1 | Thân Đức Trung | 2A202603449 | thanductrung123@gmail.com | DucTrung611 | Nhóm trưởng · Shape A `workflow` + integration (merge PR, benchmark, crash suite, ADR) |
 |   2 | Nguyễn Trung Anh | 2A202603413 | | | Shape B `single` (ReAct) |
-|   3 | Trần Anh Tú | 2A202603368 | atus011205@gmail.com (cần xác nhận) | | Shape C `orchestrator` + handoff |
+|   3 | Trần Anh Tú | 2A202603368 | atus011205@gmail.com | | Shape C `orchestrator` + handoff |
 |   4 | Trần Mạnh Hùng | 2A202603496 | | | QA (crash, secret, trace) + báo cáo nhóm, research card |
 
 Gợi ý chia vai:
