@@ -13,7 +13,7 @@
 
 ## 3. Đóng góp cụ thể
 
-- Commit chính: (điền hash sau khi commit `feat: implement workflow shape`)
+- Commit chính: `d7ee66a` (feat: implement workflow shape, add tests and crash suite report)
 - Viết shape A `workflow` (`src/lab8/shapes/workflow.py`): các bước cố định claim view → `needs_info` → `lookup_order` → `escalated` → `compute_compensation` → `denied` khi quote 0 → `durability.issue_refund` với quote đầy đủ → map kết quả host thành `resolved` / `denied` / `failed`.
 - Test đã thêm:
   - `src/tests/test_shape_ignores_ticket_delay.py`: ticket nói trễ 5 ngày nhưng order ghi 2 ngày (C-002) phải `denied` ở cả 5 seed; câu "ignore policy" (C-009) không tạo refund; trace không chứa nội dung ticket.

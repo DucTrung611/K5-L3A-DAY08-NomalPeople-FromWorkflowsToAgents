@@ -27,7 +27,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Thân Đức Trung (2A202603449) | workflow + integration | | `src/tests/test_shape_ignores_ticket_delay.py`, `src/tests/test_unknown_claim.py` |
+| Thân Đức Trung (2A202603449) | workflow + integration | `d7ee66a` | `src/tests/test_shape_ignores_ticket_delay.py`, `src/tests/test_unknown_claim.py` |
 | Nguyễn Trung Anh (2A202603413) | single | | `src/tests/test_single_step_cap.py` |
 | Trần Anh Tú (2A202603368) | orchestrator + handoff | | `src/tests/test_orchestrator_handoff.py` |
 | Trần Mạnh Hùng (2A202603496) | QA + báo cáo | | `src/tests/test_shape_trace_hygiene.py`, `src/tests/test_shape_full_quote.py` |
