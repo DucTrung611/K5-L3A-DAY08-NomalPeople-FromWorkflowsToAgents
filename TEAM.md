@@ -13,7 +13,7 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Thân Đức Trung | 2A202603449 | | DucTrung611 | Nhóm trưởng · Shape A `workflow` + integration (merge PR, benchmark, crash suite, ADR) |
 |   2 | Nguyễn Trung Anh | 2A202603413 | | | Shape B `single` (ReAct) |
-|   3 | Trần Anh Tú | 2A202603368 | | | Shape C `orchestrator` + handoff |
+|   3 | Trần Anh Tú | 2A202603368 | atus011205@gmail.com (cần xác nhận) | | Shape C `orchestrator` + handoff |
 |   4 | Trần Mạnh Hùng | 2A202603496 | | | QA (crash, secret, trace) + báo cáo nhóm, research card |
 
 Gợi ý chia vai:
@@ -29,7 +29,7 @@ Gợi ý chia vai:
 | --- | --- | --- | --- |
 | Thân Đức Trung (2A202603449) | workflow + integration | `d7ee66a` | `src/tests/test_shape_ignores_ticket_delay.py`, `src/tests/test_unknown_claim.py` |
 | Nguyễn Trung Anh (2A202603413) | single | b85df25 | `src/tests/test_single_step_cap.py` |
-| Trần Anh Tú (2A202603368) | orchestrator + handoff | | `src/tests/test_orchestrator_handoff.py` |
+| Trần Anh Tú (2A202603368) | orchestrator + handoff | `3c1abd4` | `src/tests/test_orchestrator_handoff.py` |
 | Trần Mạnh Hùng (2A202603496) | QA + báo cáo | | `src/tests/test_shape_trace_hygiene.py`, `src/tests/test_shape_full_quote.py` |
 
 ## Cá nhân
@@ -79,11 +79,12 @@ Mỗi thành viên có một báo cáo riêng trong `report/team/`:
 
 ### Đóng góp cụ thể
 
--
+- Triển khai Shape C với investigator chỉ đọc, handoff allowlist, host ghi refund và trace sạch.
+- Thêm test cho quyền tool, secret trong handoff/trace và nhánh return sớm.
 
 ### Bằng chứng
 
--
+- Commit `3c1abd4`; 62/62 student test orchestrator và 2/2 test handoff mới pass.
 
 ## 2A202603496_TranManhHung
 
