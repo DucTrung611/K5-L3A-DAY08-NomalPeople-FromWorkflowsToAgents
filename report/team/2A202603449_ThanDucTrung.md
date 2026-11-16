@@ -4,7 +4,7 @@
 
 - Họ tên: Thân Đức Trung
 - MSSV: 2A202603449
-- Email:
+- Email: thanductrung123@gmail.com
 - GitHub: DucTrung611
 
 ## 2. Phần việc phụ trách
