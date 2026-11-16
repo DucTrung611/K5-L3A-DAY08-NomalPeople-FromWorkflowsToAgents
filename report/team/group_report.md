@@ -4,8 +4,9 @@ Tối đa 5 trang ngoài phụ lục. Số liệu lấy từ file trong `src/rep
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm:
-- Thành viên: xem `TEAM.md`
+- Tên nhóm: NomalPeople (Nomal People) · Lớp L3A
+- Thành viên: Thân Đức Trung (2A202603449, nhóm trưởng), Nguyễn Trung Anh (2A202603413), Trần Anh Tú (2A202603368), Trần Mạnh Hùng (2A202603496). Chi tiết vai trò: xem `TEAM.md`
+- Repo: https://github.com/DucTrung611/K5-L3A-DAY08-NomalPeople-FromWorkflowsToAgents
 - Commit chốt (trùng `report/team/decision_adr.md`):
 
 ## 2. Mục tiêu và cách tiếp cận
