@@ -49,11 +49,20 @@ Mỗi thành viên có một báo cáo riêng trong `report/team/`:
 
 ### Đóng góp cụ thể
 
--
+- Lập `PLAN.md` (đọc source host, bảng quyết định chung cho 3 shape, lộ trình CP1–CP5) và chia việc cho nhóm.
+- Viết shape `workflow` (commit `d7ee66a`): các bước cố định claim view → `needs_info` → `lookup_order` → `escalated` → `compute_compensation` → `denied` khi quote 0 → `durability.issue_refund` với quote đầy đủ và `crash_at`; số tiền chỉ lấy từ order row, không đọc ticket; trace chỉ ghi field đã allowlist.
+- Thêm `src/tests/test_shape_ignores_ticket_delay.py` và `src/tests/test_unknown_claim.py`, tham số hóa cho cả 3 shape nhóm viết (ticket nói dối số ngày, injection, ticket không vào trace, claim không tồn tại, thiếu order id).
+- Integration: merge nhánh `single` và `orchestrator` vào `main`, xử lý conflict `TEAM.md`, kiểm tra ma trận student 248/248 sau mỗi lần merge.
+- Chạy benchmark 4 shape và crash suite (commit `41e59e5`), chọn shape theo số liệu và viết `report/team/decision_adr.md` (commit `e6f50bd`).
 
 ### Bằng chứng
 
--
+- `python -m pytest -q -m student -o addopts= -k workflow` → 62 passed; toàn bộ ma trận student → 248 passed.
+- `python -m pytest -q` → 111 passed.
+- `src/reports/benchmark.json`: workflow pass 1.000, pass^5 1.000, variance 0, cost/success 28.87 VND (thấp nhất trong 4 shape).
+- `src/reports/crash.json`: `crash_safety` 20/20.
+- Run id: `R-workflow-C-002-s55` (T02 denied dù ticket nói trễ 5 ngày), `R-workflow-C-014-s11` (T14 proposal 150000, ledger 120000).
+- `python -m lab8.check_submission`: 3 shape OK, reports OK, ADR OK.
 
 ## 2A202603413_NguyenTrungAnh
 
