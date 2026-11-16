@@ -5,7 +5,7 @@
 - Tên nhóm: NomalPeople (Nomal People)
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-NomalPeople-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/DucTrung611/K5-L3A-DAY08-NomalPeople-FromWorkflowsToAgents, nhánh `main`, commit chốt: (điền sau khi chạy `git rev-parse --short HEAD`, trùng `report/team/decision_adr.md`)
+- URL repo, nhánh nộp, commit chốt: https://github.com/DucTrung611/K5-L3A-DAY08-NomalPeople-FromWorkflowsToAgents, nhánh `main`, commit chốt: 41e59e5 (trùng `report/team/decision_adr.md`)
 
 ## Thành viên
 
@@ -30,7 +30,7 @@ Gợi ý chia vai:
 | Thân Đức Trung (2A202603449) | workflow + integration | `d7ee66a` | `src/tests/test_shape_ignores_ticket_delay.py`, `src/tests/test_unknown_claim.py` |
 | Nguyễn Trung Anh (2A202603413) | single | b85df25 | `src/tests/test_single_step_cap.py` |
 | Trần Anh Tú (2A202603368) | orchestrator + handoff | `3c1abd4` | `src/tests/test_orchestrator_handoff.py` |
-| Trần Mạnh Hùng (2A202603496) | QA + báo cáo | | `src/tests/test_shape_trace_hygiene.py`, `src/tests/test_shape_full_quote.py` |
+| Trần Mạnh Hùng (2A202603496) | QA + báo cáo | `621dc73` | `src/tests/test_shape_trace_hygiene.py`, `src/tests/test_shape_full_quote.py` |
 
 ## Cá nhân
 
@@ -103,8 +103,13 @@ Mỗi thành viên có một báo cáo riêng trong `report/team/`:
 
 ### Đóng góp cụ thể
 
--
+- Thêm `src/tests/test_shape_trace_hygiene.py` (quét toàn bộ trace không lộ CANARY, Bearer, SĐT, địa chỉ, internal note, tên hàng hay ticket).
+- Thêm `src/tests/test_shape_full_quote.py` (kiểm tra T14 đề xuất 150k, ledger 120k; T13 từ chối khi đã hoàn đủ kèm policy_denied; T08 cap theo approval).
+- Đồng tác giả báo cáo nghiên cứu `report/team/research_card.md` (chủ đề R2 MAST) và báo cáo nhóm `report/team/group_report.md`.
 
 ### Bằng chứng
 
--
+- Commit: `621dc73`.
+- `python -m pytest -q tests/test_shape_trace_hygiene.py tests/test_shape_full_quote.py` → 33 passed.
+- `python -m pytest -q` → 144 passed.
+- `src/reports/crash.json`: crash_safety 20/20.

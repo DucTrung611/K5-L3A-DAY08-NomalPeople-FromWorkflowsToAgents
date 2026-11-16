@@ -29,17 +29,25 @@
 
 ## 4. Bằng chứng
 
-- `python -m pytest -q -m student -o addopts= -k workflow` → `62 passed`.
-- `python -m pytest -q` → `67 passed, 26 skipped` (skip là test của single/orchestrator khi chưa viết).
+- `python -m pytest -q -m student -o addopts= -k workflow` → `62 passed`; toàn bộ ma trận student 4 shape → `248 passed`.
+- `python -m pytest -q` → `111 passed, 248 deselected` (toàn bộ host tests và unit tests của nhóm đều xanh).
 - `python -m lab8.crash_test --count 20 --out reports/crash.json` → `crash_safety 20/20` (`src/reports/crash.json`).
+- `python -m lab8.benchmark --shapes workflow,single,orchestrator,swarm --cases data/public_claims.jsonl --seeds 11,22,33,44,55 --out reports/benchmark.json` → `src/reports/benchmark.json` (workflow đạt pass rate 1.000, pass^5 1.000, variance 0, cost/success 28.87 VND - thấp nhất trong 4 shape).
 - Quét trace workflow trên 14 claim × seed 11, 55: không có `CANARY_`, `Bearer`, SĐT, địa chỉ, internal note, tên hàng hay nội dung ticket.
-- Run id ví dụ: `R-workflow-C-014-s11` (T14: proposal 150000, ledger 120000).
+- Run id ví dụ: `R-workflow-C-014-s11` (T14: proposal 150000, ledger 120000), `R-workflow-C-002-s55` (T02: denied 0 dù ticket khai khống trễ 5 ngày).
 
 ## 5. Công cụ AI đã dùng
 
-- Claude Code (Claude Opus): đọc source host, lập `PLAN.md`, gợi ý code workflow và test.
-- Cách tự kiểm tra: đối chiếu từng nhánh với `docs/business_rules.md` và bảng output trong `docs/contracts.md`; chạy ma trận student 62/62, cổng host, crash suite 20/20; tự quét trace tìm secret/PII. Không dùng AI để tạo số liệu benchmark hay run id.
+- Claude Code / Gemini CLI: hỗ trợ đọc và phân tích source code host, lập `PLAN.md`, gợi ý cấu trúc code workflow và các bộ test biên.
+- Cách tự kiểm tra:
+  - Tự đối chiếu từng nhánh rẽ nghiệp vụ với `docs/business_rules.md` và hợp đồng dữ liệu trong `docs/contracts.md`.
+  - Chạy toàn bộ ma trận kiểm thử tự động: student matrix 248/248, cổng host 111/111, crash suite 20/20.
+  - Tự viết script quét trace tìm secret và PII (`CANARY_`, `Bearer`, phone, address).
+  - Tuyệt đối không dùng AI để sinh số liệu giả cho benchmark hay sửa tay các file JSON kết quả.
 
 ## 6. Tự đánh giá
 
-...
+- Mức độ hoàn thành: 100% công việc được phân công theo `PLAN.md`.
+- Về mặt kỹ thuật: Xây dựng thành công Shape A (Workflow) theo đúng triết lý Least Autonomous Architecture: tốc độ thực thi nhanh nhất, chi phí mô phỏng thấp nhất (28.87 VND/success so với 49.57 VND của Swarm), độ tin cậy tuyệt đối (pass rate 1.000, variance = 0).
+- Về mặt quản lý & integration: Đã xây dựng kế hoạch phân công rõ ràng, hỗ trợ các thành viên merge code không xung đột, hoàn thiện bộ benchmark và tài liệu quyết định kiến trúc (ADR) với đầy đủ dẫn chứng khoa học thực nghiệm.
+- Điểm tự đánh giá: 10/10.
